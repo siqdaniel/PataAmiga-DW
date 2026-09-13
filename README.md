@@ -47,33 +47,138 @@ A Pata Amiga é uma rede catarinense de pet shops com 32 lojas. Este projeto con
 ##  Respostas às Perguntas de Negócio
 
 ### P1: Gargalo da Entrega
-- **Tempo Médio Total:** X,XX dias.
-- **Intervalo Mais Lento:** [Separação Nota / Nota Despacho / etc.]
-- **Comportamento por Porte:** [Análise comparativa em Pequena, Média e Grande]
+- **Tempo Médio Total:** 10,46 dias (geral da rede)..
+- **Intervalo Mais Lento:** Nota Despacho, que consome em média 8,53 dias nas lojas de pequeno porte e 3,33 dias nas demais.
+- **Comportamento por Porte:**Lojas de porte Grande (8,04 dias) e Média (8,06 dias) mantêm ciclos operacionais praticamente idênticos. O gargalo operacional reside integralmente nas lojas de porte Pequena, cujo ciclo total atinge 15,27 dias devido a atrasos críticos na etapa de despacho (8,53 dias vs. 3,34 dias no porte médio).
 
 ### P2: Concentração de Faturamento por Categoria
-| Categoria | Faturamento (R$) | % do Total | Categoria Campeã por Porte |
-| :--- | :--- | :--- | :--- |
-| ... | ... | ... | ... |
+| Categoria | Faturamento (R$) | % do Total |
+| :--- | :--- | :--- |
+| Racoes | R$ 21.239.566,21 | 62,78% |
+| Medicamentos | R$ 5.059.118,76 | 14,95% |
+| Outros | R$ 4.630.184,66 | 13,69% |
+| Higiene e Beleza | R$ 1.212.824,89 | 3,58% |
+| Acessorios | R$ 1.166.136,38 | 3,45% |
+| Brinquedos | R$ 525.478,24 | 1,55% |
+| **Total Geral** | **R$ 33.833.309,14** | **100,00%** |
 
+
+##  Insights e Diagnóstico de Negócio
+
+* **Dominância de Rações:** A categoria representa **62,78%** do faturamento total (R$ 21.239.566,21), consolidando-se como o principal motor de receita e produto de atração da rede.
+---
 ### P3: Desconto por Canal de Venda
-| Canal | Ticket Médio COM Desconto | Ticket Médio SEM Desconto | % do Faturamento |
-| :--- | :--- | :--- | :--- |
-| App | ... | ... | ... |
-| WhatsApp | ... | ... | ... |
-| ... | ... | ... | ... |
+## 📊 Tabela de Desconto por Canal de Venda
+
+| Canal | Ticket Médio COM Desconto | Ticket Médio SEM Desconto | % do Faturamento | Faturamento Total (R$) |
+| :--- | :--- | :--- | :--- | :--- |
+| App | R$ 8.900,45 | R$ 2.771,98 | 29,28% | R$ 9.905.205,96 |
+| Site | R$ 8.534,73 | R$ 5.318,58 | 25,74% | R$ 8.709.746,34 |
+| Loja Fisica | R$ 11.253,72 | R$ 2.706,47 | 22,94% | R$ 7.761.846,93 |
+| WhatsApp | R$ 9.385,73 | R$ 3.965,83 | 10,33% | R$ 3.493.441,19 |
+| Nao Informado | R$ 11.015,53 | R$ 3.986,02 | 6,65% | R$ 2.250.505,39 |
+| Telefone | R$ 8.489,62 | R$ 987,55 | 5,06% | R$ 1.712.563,33 |
+| **Total Geral** | — | — | **100,00%** | **R$ 33.833.309,14** |
+
+##  Insights Negócio
+
+* **Participação dos Canais Digitais:** O **App** lidera o faturamento com **29,28%** (R$ 9.905.205,96), seguido pelo **Site** com **25,74%** (R$ 8.709.746,34). Juntos, os dois canais digitais representam mais de **55%** da receita da rede.
+* **Impacto do Desconto no Ticket Médio:** Em todos os canais, pedidos com desconto registrado apresentam um ticket médio muito mais elevado. Na **Loja Física**, o ticket médio salta de R$ 2.706,47 (sem desconto) para **R$ 11.253,72** (com desconto).
+* **Canal WhatsApp:** Responsável por **10,33%** do faturamento (R$ 3.493.441,19), o WhatsApp apresenta ticket médio de R$ 9.385,73 para vendas com desconto vs. R$ 3.965,83 sem desconto.
+---
 
 ### P4: Faturamento Rateado por Praça de Atendimento
-| Praça | Faturamento Rateado (R$) | Domicílios com Pet | Faturamento / Pet |
-| :--- | :--- | :--- | :--- |
-| ... | ... | ... | ... |
-- **Reconciliação:** Soma total por praça + pedidos sem loja = **R$ 1.793.309,00**
+---
 
+##  Tabela de Faturamento Rateado por Praça de Atendimento
+
+| Praça de Atendimento | Regional | Faturamento Rateado (R$) | % do Total Rateado |
+| :--- | :--- | :--- | :--- |
+| Vale do Itajai | Regional Leste | R$ 12.056.870,24 | 35,65% |
+| Grande Florianopolis | Regional Leste | R$ 4.884.885,19 | 14,44% |
+| Norte Industrial | Regional Norte | R$ 3.344.104,40 | 9,89% |
+| Litoral Sul | Regional Sul | R$ 2.777.683,70 | 8,21% |
+| Litoral Norte | Regional Norte | R$ 2.669.554,90 | 7,89% |
+| Serra Catarinense | Regional Oeste | R$ 1.870.979,81 | 5,53% |
+| Carbonifera | Regional Sul | R$ 1.782.391,94 | 5,27% |
+| Extremo Oeste | Regional Oeste | R$ 1.425.003,43 | 4,21% |
+| Meio-Oeste | Regional Oeste | R$ 1.002.414,54 | 2,96% |
+| Foz do Itajai | Regional Leste | R$ 817.764,79 | 2,42% |
+| Planalto Serrano | Regional Oeste | R$ 676.218,20 | 2,00% |
+| Planalto Norte | Regional Norte | R$ 512.421,22 | 1,52% |
+| **Subtotal Praças** | **—** | **R$ 33.820.292,36** | **100,00%** |
+| Pedidos sem Loja (Não Informado / Linha -1) | — | R$ 13.016,78 | — |
+| **Total Geral Reconciliado** | **—** | **R$ 33.833.309,14** | **—** |
+
+## Consolidação por Regional
+
+| Regional | Faturamento Rateado (R$) | % do Total Rateado |
+| :--- | :--- | :--- |
+| Regional Leste | R$ 17.759.520,22 | 52,51% |
+| Regional Norte | R$ 6.526.080,52 | 19,30% |
+| Regional Oeste | R$ 4.974.615,98 | 14,71% |
+| Regional Sul | R$ 4.560.075,64 | 13,48% |
 ### P5: Expansão e Limitações dos Dados
-- **a) Ranking por Vendas/1k Habs:** [Resultado e correlação com tempo de entrega]
-- **b) Análise por Faixa de Franquia:** Explicação técnica de por que a faixa atual no cadastro sobrescreve o histórico (SCD Tipo 1/Foto Atual) e impede análise retroativa.
-- **c) O que ficou de fora:** 3 pedidos sem loja, 1.953 entregas em aberto, itens/valores em branco.
-- **Recomendação Final:** [ Sugestão de praça para nova loja com base nos dados ]
+- **a) Ranking por Vendas/1k Habs:** 
+##  P5 (a): Ranking por Vendas / 1k Habitantes e Tempo de Entrega
+
+A métrica de **itens por 1.000 habitantes** avalia a densidade de consumo relativa à população da cidade. Nota-se uma forte correlação positiva (**r = +0,736**) entre a taxa de itens por mil habitantes e o tempo médio de entrega. 
+
+Cidades de menor porte populacional (ex: Rio dos Cedros, Presidente Getúlio, Ibirama) apresentam os maiores índices por habitante (acima de 30 itens/1k hab), porém sofrem com os maiores prazos de entrega (14 a 16 dias) devido ao gargalo logístico das lojas de pequeno porte. Em contrapartida, grandes centros (Florianópolis, Joinville, Chapecó) possuem baixas taxas relativas (2,6 a 3,5 itens/1k hab) com entregas mais céleres (~8 dias).
+
+### Tabela: Ranking Top 10 e Flop 5 (Itens / 1k Habs vs. Tempo Médio de Entrega)
+
+| Posição | Loja / Cidade | Itens Vendidos | População | Itens / 1k Habs | Média Dias Entrega |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1º | Pata Amiga Rio dos Cedros | 474 | 11.322 | 41.87 | 14.31 dias |
+| 2º | Pata Amiga Presidente Getulio | 570 | 16.359 | 34.84 | 14.26 dias |
+| 3º | Pata Amiga Ibirama | 597 | 18.613 | 32.07 | 15.50 dias |
+| 4º | Pata Amiga Itapoa | 534 | 20.586 | 25.94 | 15.53 dias |
+| 5º | Pata Amiga Santo Amaro da Imperatriz | 530 | 22.357 | 23.71 | 16.00 dias |
+| 6º | Pata Amiga Taio | 352 | 18.173 | 19.37 | 14.63 dias |
+| 7º | Pata Amiga Timbo | 804 | 45.011 | 17.86 | 7.77 dias |
+| 8º | Pata Amiga Gaspar | 1.189 | 71.133 | 16.72 | 8.10 dias |
+| 9º | Pata Amiga Otacilio Costa | 289 | 18.227 | 15.86 | 15.72 dias |
+| 10º | Pata Amiga Ituporanga | 354 | 25.748 | 13.75 | 16.63 dias |
+|
+
+---
+**b) Análise por Faixa de Franquia:** ## 🏬 P5 (b): Análise por Faixa de Franquia e Limitação Histórica (SCD Tipo 1)
+
+### Tabela: Desempenho por Faixa de Franquia
+
+| Faixa de Franquia | Qtd. Lojas | Faturamento Total (R$) | % do Faturamento |
+| :--- | :--- | :--- | :--- |
+| Ouro | 15 | R$ 18.998.028,89 | 56,17% |
+| Diamante | 5 | R$ 7.397.722,97 | 21,87% |
+| Prata | 8 | R$ 5.467.415,53 | 16,17% |
+| Bronze | 4 | R$ 1.957.124,97 | 5,79% |
+| **Total Geral** | **32** | **R$ 33.820.292,36** | **100,00%** |
+
+> **Limitação Técnica de Negócio (SCD Tipo 1 / Foto Atual):**
+> A dimensão de lojas (`dim_loja`) armazena a `faixa_franquia` atual de forma destrutiva (Slowly Changing Dimension Tipo 1). Caso uma loja tenha progredido da faixa *Bronze* para *Prata* ou *Ouro* durante o período analisado (7 meses), todo o seu faturamento histórico é reatribuído integralmente à faixa atual. Essa modelagem impede a realização de análises retroativas sobre a evolução de desempenho por categoria de franquia ao longo do tempo.
+
+---
+
+ **c) O que ficou de fora:** A análise identificou pontos cego na base de origem que impactam o diagnóstico completo:
+
+| Métrica / Limitação | Registros Afetados | Impacto no Diagnóstico |
+| :--- | :--- | :--- |
+| **Pedidos sem Código/Nome de Loja** | 3 pedidos (R$ 13.016,78) | Registros vinculados à linha fictícia -1 ("Não Informado") |
+| **Entregas não Concluídas** | 1.953 pedidos (48,3%) | Impedem a medição do ciclo total de entrega para quase metade da base |
+| **Itens em Branco** | 257 registros | Prejudicam a contagem e análise de volume físico de produtos |
+| **Valores em Branco** | 121 registros | Requerem imputação ou descarte na consolidação financeira |
+
+
+
+##  Recomendação Final para Expansão da Rede
+
+Com base nos dados cruzados de **faturamento por praça (P4)**, **população** e **densidade de atendimento (P5a)**:
+
+1. **Prioridade de Expansão — Florianópolis / São José (Grande Florianópolis):** 
+   - A região de Florianópolis e São José concentra mais de 780 mil habitantes, porém apresenta uma taxa reduzida de itens por habitante (2,65 a 3,71 itens/1k hab). A demanda reprimida e o alto poder aquisitivo justificam a abertura de uma nova unidade de médio/grande porte na **Grande Florianópolis** para capturar *market share*.
+2. **Reestruturação Logística nas Lojas Pequenas:** 
+   - Antes de expandir para cidades pequenas (onde o custo logístico eleva o prazo de entrega para mais de 15 dias), deve-se resolver o gargalo de despacho observado nas lojas de pequeno porte.
 
 ---
 
