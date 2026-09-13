@@ -1,0 +1,19 @@
+canal_pedido,houve_desconto,total_pedidos,ticket_medio,faturamento_total
+App,Nao,136,2771.98,363129.66
+App,"Nao Informado",341,8133.72,2635324.16
+App,Sim,796,8900.45,6906752.14
+"Loja Fisica",Nao,93,2706.47,240876.15
+"Loja Fisica","Nao Informado",225,8987.93,1950381.85
+"Loja Fisica",Sim,506,11253.72,5570588.93
+"Nao Informado",Nao,24,3986.02,87692.40
+"Nao Informado","Nao Informado",52,9145.52,466421.56
+"Nao Informado",Sim,161,11015.53,1696391.43
+Site,Nao,132,5318.58,686097.44
+Site,"Nao Informado",283,10766.24,2928415.98
+Site,Sim,617,8534.73,5095232.92
+Telefone,Nao,27,987.55,26663.80
+Telefone,"Nao Informado",72,4313.64,310581.76
+Telefone,Sim,165,8489.62,1375317.77
+WhatsApp,Nao,52,3965.83,202257.32
+WhatsApp,"Nao Informado",101,9072.09,907208.66
+WhatsApp,Sim,261,9385.73,2383975.21
