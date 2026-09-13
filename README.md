@@ -6,7 +6,7 @@ A Pata Amiga é uma rede catarinense de pet shops com 32 lojas. Este projeto con
 ---
 
 ##  Diagrama do Modelo Dimensional (Star Schema)
-![Diagrama Star Schema](./docs/diagrama_modelo.png)
+![Modelo Dimensional](./assets/Diagrama.png)
 
 > **Grão da Fato (`fato_pedido`):** 1 linha = 1 pedido (Total: 4.044 linhas).
 
