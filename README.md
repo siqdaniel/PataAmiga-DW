@@ -184,3 +184,7 @@ Com base nos dados cruzados de **faturamento por praça (P4)**, **população** 
 
 ##  Vídeo de Apresentação
 [Assista ao vídeo no Google Drive](https://drive.google.com/file/d/1U03sNBhuIJWd10Zwp-V6durshhD0Dq7W/view?usp=sharing_AQUI)
+
+
+
+[Assista ao vídeo no Youtube](https://youtu.be/JE5Qt6MDZmc?si=63t-jKLB-57vsi6j)
